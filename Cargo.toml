@@ -1,0 +1,21 @@
+[package]
+name          = "ticklist"
+version       = "0.1.0"
+edition       = "2021"
+description   = "Climbers' ticklist"
+authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
+license-file  = "LICENSE"
+readme        = "README.md"
+homepage      = "https://github.com/hseeberger/ticklist"
+repository    = "https://github.com/hseeberger/ticklist"
+documentation = "https://github.com/hseeberger/ticklist"
+publish       = false
+
+[dependencies]
+anyhow          = { version = "1.0", features = [ "backtrace" ] }
+axum            = { version = "0.6", features = [ "headers", "http2", "json" ] }
+serde           = { version = "1.0", features = [ "derive" ] }
+serde_json      = { version = "1.0" }
+shuttle-axum    = { version = "0.16" }
+shuttle-runtime = { version = "0.16" }
+tokio           = { version = "1" }
