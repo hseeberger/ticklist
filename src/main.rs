@@ -96,7 +96,7 @@ fn bind_post_crag<'q>(
     query: Query<'q, Postgres, <Postgres as HasArguments<'q>>::Arguments>,
 ) -> Query<'q, Postgres, <Postgres as HasArguments<'q>>::Arguments> {
     query
-        .bind(Uuid::now_v7())
+        .bind(Uuid::new_v4())
         .bind(crag.name)
         .bind(crag.location)
 }
@@ -120,7 +120,7 @@ fn bind_post_route<'q>(
     query: Query<'q, Postgres, <Postgres as HasArguments<'q>>::Arguments>,
 ) -> Query<'q, Postgres, <Postgres as HasArguments<'q>>::Arguments> {
     query
-        .bind(Uuid::now_v7())
+        .bind(Uuid::new_v4())
         .bind(route.crag_id)
         .bind(route.name)
 }
@@ -145,7 +145,7 @@ fn bind_post_ascent<'q>(
 ) -> Query<'q, Postgres, <Postgres as HasArguments<'q>>::Arguments> {
     info!("{ascent:?}");
     query
-        .bind(Uuid::now_v7())
+        .bind(Uuid::new_v4())
         .bind(ascent.route_id)
         .bind(ascent.date)
 }
